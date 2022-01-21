@@ -20,10 +20,6 @@ class HomeView(View):
 
     def get(self, request):
         form = FileUploadForm()
-        test = datetime.datetime.fromtimestamp(os.path.getctime('./media/images/aHR0cHM6Ly9zY29udGVu.zip'))
-        time_elapsed = datetime.datetime.now() - test
-        print(time_elapsed)
-        print(datetime.timedelta(minutes=1))
         return render(request, 'home.html', {'form': form})
 
     def post(self, request):
